@@ -1,0 +1,78 @@
+<ion-card >
+
+  <ion-card-header>
+    <h2>Cadastro de Produto</h2>
+  </ion-card-header>
+
+  <ion-card-content>
+<form [formGroup]="productForm" class="example-form">
+
+  <ion-row>
+
+    <ion-col>
+  <mat-form-field class="example-full-width create">
+    <input matInput placeholder="Produto" formControlName="name" name="teste">
+  </mat-form-field>
+</ion-col>
+
+<ion-col>
+  <mat-form-field class="example-full-width create">
+    <input matInput placeholder="Fabricante" formControlName="manufacturer" name="teste">
+  </mat-form-field>
+</ion-col>
+
+<ion-col>
+  <mat-form-field class="example-full-width create">
+    <input matInput placeholder="Código do Produto" formControlName="cdProduct" name="teste">
+  </mat-form-field>
+</ion-col>
+
+<ion-col>
+
+  <mat-form-field class="example-full-width create">
+    <mat-label>Fornecedor</mat-label>
+    <mat-select formControlName="idProvider">
+      <mat-option *ngFor="let l of providers" [value]="l.idProvider">
+        {{l.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</ion-col>
+</ion-row>
+
+<ion-row>
+
+  <ion-col>
+  <mat-form-field class="example-full-width create">
+    <input type="number" matInput placeholder="Valor entrada" formControlName="vlInput" name="teste">
+  </mat-form-field>
+</ion-col>
+
+<ion-col>
+  <mat-form-field class="example-full-width create">
+    <input matInput type="number" placeholder="Valor saída" formControlName="vlOutput" name="teste">
+  </mat-form-field>
+</ion-col>
+  
+<ion-col>
+  <mat-form-field class="example-full-width create">
+    <input matInput type="number" formControlName="amount" placeholder="Quantidade" min="1">
+  </mat-form-field>
+</ion-col>
+
+<ion-col>
+  <mat-form-field class="example-full-width create">
+    <input matInput placeholder="Validade" formControlName="name" name="teste">
+  </mat-form-field>
+</ion-col>
+</ion-row>
+</form>
+</ion-card-content>
+
+  <mat-divider></mat-divider>
+
+<button mat-raised-button color="success" style="background-color: #3880ff; float: right; margin: 10px;" (click)="save()">Salvar</button>
+<button mat-raised-button style="border: 1px solid #3880ff; float: right; margin: 10px" (click)="cancel()">Cancelar</button>
+
+</ion-card>

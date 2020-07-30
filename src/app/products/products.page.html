@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gestão de Estoque</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button *ngIf="!isDevice" (click)="createProduct()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-button *ngIf="isDevice" (click)="scanCode()">
+    <ion-icon name="scan"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-content>
+  
+  <app-product-table *ngIf="!isDevice"  (showQrCode)="qrCodeGenerator($event)"></app-product-table>
+
+  <app-new-product
+    (cancelCreate)="cancel($event)"
+    *ngIf="create"
+  ></app-new-product>
+
+  <ion-card *ngIf="showQrCode">
+    <ion-card-header> </ion-card-header>
+    <ion-card-content>
+      <ngx-qrcode [element-type]="elementType" [value]="qrData" class="my-code">
+      </ngx-qrcode>
+    </ion-card-content>
+  </ion-card>
+
+<app-product-device *ngIf="isDevice" ></app-product-device>
+
+
+</ion-content>

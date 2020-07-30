@@ -1,0 +1,22 @@
+<mat-form-field id="filter">
+  <mat-label>Procurar</mat-label>
+  <input matInput [(ngModel)]="args">
+</mat-form-field>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let product of products | search : args">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       {{product.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        R$ {{product.vlOutput}}, 00
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+      <p> Fabricante: {{product.manufacturer}} </p>
+      <p> Fornecedor: {{product.provider}} </p>
+      <p> Código: {{product.cdProduct}} </p>
+      <p> Preço: {{product.amount}} </p>
+  </mat-expansion-panel>
+</mat-accordion>

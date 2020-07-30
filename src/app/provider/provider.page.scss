@@ -1,0 +1,56 @@
+table {
+    width: 100%;
+  }
+
+  .mat-elevation-z8{
+    margin: 10px;
+  }
+
+ion-icon#delete{
+  font-size: 20px;
+  color: red;
+}
+
+ion-icon#edit{
+  font-size: 30px;
+  color: #62462B;
+}
+
+ion-header{
+  --ion-background-color: #62462B;
+}
+
+ion-title{
+  color: white;
+}
+
+mat-form-field#filter{
+  width: 99%;
+  margin: 10px;
+}
+
+.create{
+  margin: 10px;
+  width: 100%;
+}
+
+ion-card-header{
+  text-align: center;
+}
+
+.positivo{
+  color: green;
+  }
+  
+  .negativo{
+    color: red;
+  }
+  
+  mat-expansion-panel{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.mat-expansion-panel-header-description {
+  display: flex;
+  justify-content: flex-end;
+}

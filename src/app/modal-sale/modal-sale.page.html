@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de venda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+  <ion-card-header>
+    
+  </ion-card-header>
+  <ion-card-content>
+    <form [formGroup]="saleForm">
+    <mat-form-field class="example-full-width">
+      <input matInput type="number" formControlName="amount" placeholder="Quantidade" min="1" [max]="product.amount">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput type="" formControlName="cdProductSold" placeholder="Código da venda" min="1" [max]="product.amount">
+    </mat-form-field>
+  </form>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <button mat-raised-button color="success" style="background-color: #62462B; float: left; color: white;" (click)="cancel()">Cancelar</button>
+    <button mat-raised-button style="border: 1px solid #62462B; float: right;" (click)="save()">Salvar</button>
+  
+  </ion-toolbar>

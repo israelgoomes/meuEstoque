@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+  <form [formGroup]="productForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Produto" formControlName="name" name="teste">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Fabricante" formControlName="manufacturer" name="teste">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Código do Produto" formControlName="cdProduct" name="teste">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width create">
+      <mat-label>Fornecedor</mat-label>
+      <mat-select [value]="productForm.get('idProvider').value" formControlName="idProvider">
+        <mat-option *ngFor="let l of providers" [value]="l.idProvider">
+          {{l.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Valor entrada" formControlName="vlInput" name="teste">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Valor saída" formControlName="vlOutput" name="teste">
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+      <input matInput type="number" formControlName="amount" placeholder="Quantidade" min="1">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Validade" formControlName="name" name="teste">
+    </mat-form-field>
+  </form>
+</ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <button mat-raised-button color="success" style="background-color: #62462B; float: left; color: white;" (click)="cancel()">Cancelar</button>
+    <button mat-raised-button style="border: 1px solid #62462B; float: right;" (click)="save()">Salvar</button>
+  
+  </ion-toolbar>
+
