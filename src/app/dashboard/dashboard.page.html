@@ -1,0 +1,152 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <mat-card *ngIf="!alteraMes">
+    <ion-row>
+      <ion-col>
+        <span id="mesAno"> {{mes}}</span>
+      </ion-col>
+      <ion-col>
+        <div style="text-align: right;">
+          <ion-button (click)="alterarMes()">Alterar</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </mat-card>
+
+  <mat-card *ngIf="alteraMes">
+    <mat-form-field class="example-full-width create">
+      <mat-label>Selecione o mês:</mat-label>
+      <mat-select [(ngModel)]="teste" [value]="meses[0].month" #selected
+        (selectionChange)="getTotalMes(selected.value)">
+        <mat-option *ngFor="let mes of meses" [value]="mes.value">
+          {{mes.month}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+
+  <ion-row>
+
+    <ion-col col-6>
+      <mat-card class="color-card">
+        <mat-card-title>
+          {{mes}}
+        </mat-card-title>
+        <mat-card-content>
+          <p>Total de vendas</p>
+          <p id="number">{{totalVendasMes}}</p>
+        </mat-card-content>
+
+      </mat-card>
+    </ion-col>
+
+    <ion-col col-6>
+      <mat-card class="not-color">
+        <mat-card-title>
+          Total Vendido:
+        </mat-card-title>
+        <mat-card-content>
+          <p>R$</p>
+          <p id="white">{{totalVendidoMes | currency: 'BRL'}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ion-col>
+    <ion-col col-6>
+      <mat-card class="color-card">
+        <mat-card-title>
+          Total Lucro:
+        </mat-card-title>
+        <mat-card-content>
+          <p>R$</p>
+          <p id="number">{{totalLucroMes | currency: 'BRL' }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ion-col>
+
+
+  </ion-row>
+
+  <mat-card *ngIf="!alteraAno">
+    <ion-row>
+      <ion-col>
+        <span id="mesAno"> {{anoAnterior}}</span>
+      </ion-col>
+      <ion-col>
+        <div style="text-align: right;">
+          <ion-button (click)="alterarAno()">Alterar</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </mat-card>
+
+
+  <mat-card *ngIf="alteraAno">
+    <mat-form-field class="example-full-width create">
+      <mat-label>Selecione o Ano:</mat-label>
+      <mat-select #selectedYear (selectionChange)="getTotalAno(selectedYear.value)">
+        <mat-option *ngFor="let ano of anos" [value]="ano.ano">
+          {{ano.ano}}
+        </mat-option>}
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+
+  <ion-row *ngIf="chartData[0].data.length > 0">
+
+    <ion-col class="canvas" [size]="isDevice ? '12' : '8'">
+      <canvas *ngIf="chartData[0].data.length > 0" baseChart [datasets]=" chartData" [chartType]="chartType"
+        [labels]="chartLabels">
+      </canvas>
+    </ion-col>
+
+
+    <ion-col [size]="isDevice ? '12' : '4'">
+      <mat-card class="color-card" id="vendasAno">
+        <mat-card-title>
+          {{anoAnterior}}
+        </mat-card-title>
+        <mat-card-content>
+          <p>Total de vendas</p>
+          <p id="number">{{totalVendasAno}}</p>
+        </mat-card-content>
+
+      </mat-card>
+    </ion-col>
+
+  </ion-row>
+  <ion-row *ngIf="chartData[0].data.length > 0">
+    <ion-col col-6>
+      <mat-card class="not-color">
+        <mat-card-title>
+          Total Vendido:
+        </mat-card-title>
+        <mat-card-content>
+          <p>R$</p>
+          <p id="white">{{totalVendidoAno | currency: 'BRL'}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ion-col>
+    <ion-col col-6>
+      <mat-card class="not-color">
+        <mat-card-title>
+          Total Lucro:
+        </mat-card-title>
+        <mat-card-content>
+          <p>R$</p>
+          <p id="white">{{totalLucroAno | currency: 'BRL'}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

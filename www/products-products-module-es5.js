@@ -6208,7 +6208,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-card >\n\n  <ion-card-header>\n    <h2>Cadastro de Produto</h2>\n  </ion-card-header>\n\n  <ion-card-content>\n<form [formGroup]=\"productForm\" class=\"example-form\">\n\n  <ion-row>\n\n    <ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput placeholder=\"Produto\" formControlName=\"name\" name=\"teste\">\n  </mat-form-field>\n</ion-col>\n\n<ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput placeholder=\"Fabricante\" formControlName=\"manufacturer\" name=\"teste\">\n  </mat-form-field>\n</ion-col>\n\n<ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput placeholder=\"Código do Produto\" formControlName=\"cdProduct\" name=\"teste\">\n  </mat-form-field>\n</ion-col>\n\n<ion-col>\n\n  <mat-form-field class=\"example-full-width create\">\n    <mat-label>Fornecedor</mat-label>\n    <mat-select formControlName=\"idProvider\">\n      <mat-option *ngFor=\"let l of providers\" [value]=\"l.idProvider\">\n        {{l.name}}\n      </mat-option>\n    </mat-select>\n  </mat-form-field>\n\n</ion-col>\n</ion-row>\n\n<ion-row>\n\n  <ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input type=\"number\" matInput placeholder=\"Valor entrada\" formControlName=\"vlInput\" name=\"teste\">\n  </mat-form-field>\n</ion-col>\n\n<ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput type=\"number\" placeholder=\"Valor saída\" formControlName=\"vlOutput\" name=\"teste\">\n  </mat-form-field>\n</ion-col>\n  \n<ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput type=\"number\" formControlName=\"amount\" placeholder=\"Quantidade\" min=\"1\">\n  </mat-form-field>\n</ion-col>\n\n<ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput placeholder=\"Validade\" formControlName=\"name\" name=\"teste\">\n  </mat-form-field>\n</ion-col>\n</ion-row>\n</form>\n</ion-card-content>\n\n  <mat-divider></mat-divider>\n\n<button mat-raised-button color=\"success\" style=\"background-color: #3880ff; float: right; margin: 10px;\" (click)=\"save()\">Salvar</button>\n<button mat-raised-button style=\"border: 1px solid #3880ff; float: right; margin: 10px\" (click)=\"cancel()\">Cancelar</button>\n\n</ion-card>";
+    __webpack_exports__["default"] = "<ion-card>\n\n  <ion-card-header>\n    <h2>Cadastro de Produto</h2>\n  </ion-card-header>\n\n  <ion-card-content>\n    <form [formGroup]=\"productForm\" class=\"example-form\">\n\n      <ion-row>\n\n        <ion-col>\n          <mat-form-field class=\"example-full-width create\">\n            <input matInput placeholder=\"Produto\" formControlName=\"name\" name=\"teste\">\n          </mat-form-field>\n        </ion-col>\n\n        <ion-col>\n          <mat-form-field class=\"example-full-width create\">\n            <input matInput placeholder=\"Fabricante\" formControlName=\"manufacturer\" name=\"teste\">\n          </mat-form-field>\n        </ion-col>\n\n        <ion-col>\n          <mat-form-field class=\"example-full-width create\">\n            <input matInput placeholder=\"Código do Produto\" formControlName=\"cdProduct\" name=\"teste\">\n          </mat-form-field>\n        </ion-col>\n\n        <ion-col>\n\n          <mat-form-field class=\"example-full-width create\">\n            <mat-label>Fornecedor</mat-label>\n            <mat-select formControlName=\"idProvider\">\n              <mat-option *ngFor=\"let l of providers\" [value]=\"l.idProvider\">\n                {{l.name}}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n          <mat-form-field class=\"example-full-width create\">\n            <input type=\"number\" matInput placeholder=\"Valor entrada\" formControlName=\"vlInput\" name=\"teste\">\n          </mat-form-field>\n        </ion-col>\n\n        <ion-col>\n          <mat-form-field class=\"example-full-width create\">\n            <input matInput type=\"number\" placeholder=\"Valor saída\" formControlName=\"vlOutput\" name=\"teste\">\n          </mat-form-field>\n        </ion-col>\n\n        <ion-col>\n          <mat-form-field class=\"example-full-width create\">\n            <input matInput type=\"number\" formControlName=\"amount\" placeholder=\"Quantidade\" min=\"1\">\n          </mat-form-field>\n        </ion-col>\n        <!-- \n<ion-col>\n  <mat-form-field class=\"example-full-width create\">\n    <input matInput placeholder=\"Validade\" formControlName=\"name\" name=\"teste\">\n  </mat-form-field>\n</ion-col> -->\n      </ion-row>\n    </form>\n  </ion-card-content>\n\n  <mat-divider></mat-divider>\n\n  <button mat-raised-button color=\"success\" style=\"background-color: #3880ff; float: right; margin: 10px;\"\n    (click)=\"save()\">Salvar</button>\n  <button mat-raised-button style=\"border: 1px solid #3880ff; float: right; margin: 10px\"\n    (click)=\"cancel()\">Cancelar</button>\n\n</ion-card>";
     /***/
   },
 
@@ -6228,7 +6228,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-form-field id=\"filter\">\n  <mat-label>Procurar</mat-label>\n  <input matInput [(ngModel)]=\"args\">\n</mat-form-field>\n\n<mat-accordion>\n  <mat-expansion-panel *ngFor=\"let product of products | search : args\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n       {{product.name}}\n      </mat-panel-title>\n      <mat-panel-description>\n        R$ {{product.vlOutput}}, 00\n      </mat-panel-description>\n    </mat-expansion-panel-header>\n\n      <p> Fabricante: {{product.manufacturer}} </p>\n      <p> Fornecedor: {{product.provider}} </p>\n      <p> Código: {{product.cdProduct}} </p>\n      <p> Preço: {{product.amount}} </p>\n  </mat-expansion-panel>\n</mat-accordion>";
+    __webpack_exports__["default"] = "<mat-form-field id=\"filter\">\n  <mat-label>Procurar</mat-label>\n  <input matInput [(ngModel)]=\"args\">\n</mat-form-field>\n\n<mat-accordion>\n  <mat-expansion-panel *ngFor=\"let product of products | search : args\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        {{product.name}}\n      </mat-panel-title>\n      <mat-panel-description>\n        R$ {{product.vlOutput}}, 00\n      </mat-panel-description>\n    </mat-expansion-panel-header>\n\n    <p> Fabricante: {{product.manufacturer}} </p>\n    <p> Fornecedor: {{product.provider}} </p>\n    <p> Código: {{product.cdProduct}} </p>\n    <p> Valor Entrada: {{product.vlInput}} </p>\n    <p> Preço: {{product.vlOutput}} </p>\n  </mat-expansion-panel>\n</mat-accordion>";
     /***/
   },
 
@@ -6288,7 +6288,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctcHJvZHVjdC9DOlxcVXNlcnNcXGxzcmFlbFxcRGVza3RvcFxcZXN0b3F1ZVxcaW1BcHAvc3JjXFxhcHBcXGNvbXBvbmVudHNcXG5ldy1wcm9kdWN0XFxuZXctcHJvZHVjdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9uZXctcHJvZHVjdC9uZXctcHJvZHVjdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUNDSjs7QURFRTtFQUNFLFlBQUE7QUNDSjs7QURFQTtFQUNFLGVBQUE7RUFDQSxVQUFBO0FDQ0Y7O0FERUE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtBQ0NGOztBREVBO0VBQ0UsK0JBQUE7QUNDRjs7QURFQTtFQUNFLFlBQUE7QUNDRjs7QURFQTtFQUNFLFVBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQ0NGOztBREVBO0VBQ0Usa0JBQUE7QUNDRjs7QURFQTtFQUNFLGtCQUFBO0VBQ0EsWUFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uZXctcHJvZHVjdC9uZXctcHJvZHVjdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuXHJcbiAgLm1hdC1lbGV2YXRpb24tejh7XHJcbiAgICBtYXJnaW46IDEwcHg7XHJcbiAgfVxyXG5cclxuaW9uLWljb24jZGVsZXRle1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBjb2xvcjogcmVkO1xyXG59XHJcblxyXG5pb24taWNvbiNlZGl0e1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxuICBjb2xvcjogIzYyNDYyQjtcclxufVxyXG5cclxuaW9uLWhlYWRlcntcclxuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjNjI0NjJCO1xyXG59XHJcblxyXG5pb24tdGl0bGV7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5tYXQtZm9ybS1maWVsZCNmaWx0ZXJ7XHJcbiAgd2lkdGg6IDk5JTtcclxuICBtYXJnaW46IDEwcHg7XHJcbn1cclxuXHJcbi5jcmVhdGV7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5pb24tY2FyZC1oZWFkZXJ7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4ubXktY29kZXtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDI1MHB4O1xyXG59IiwidGFibGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm1hdC1lbGV2YXRpb24tejgge1xuICBtYXJnaW46IDEwcHg7XG59XG5cbmlvbi1pY29uI2RlbGV0ZSB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgY29sb3I6IHJlZDtcbn1cblxuaW9uLWljb24jZWRpdCB7XG4gIGZvbnQtc2l6ZTogMzBweDtcbiAgY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi1oZWFkZXIge1xuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjNjI0NjJCO1xufVxuXG5pb24tdGl0bGUge1xuICBjb2xvcjogd2hpdGU7XG59XG5cbm1hdC1mb3JtLWZpZWxkI2ZpbHRlciB7XG4gIHdpZHRoOiA5OSU7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuLmNyZWF0ZSB7XG4gIG1hcmdpbjogMTBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbmlvbi1jYXJkLWhlYWRlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLm15LWNvZGUge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAyNTBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXctcHJvZHVjdC9DOlxcVXNlcnNcXGxzcmFlbFxcRGVza3RvcFxcZGVza3RvcFxcZXN0b3F1ZVxcaW1BcHAvc3JjXFxhcHBcXGNvbXBvbmVudHNcXG5ldy1wcm9kdWN0XFxuZXctcHJvZHVjdC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9uZXctcHJvZHVjdC9uZXctcHJvZHVjdC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUNDSjs7QURFRTtFQUNFLFlBQUE7QUNDSjs7QURFQTtFQUNFLGVBQUE7RUFDQSxVQUFBO0FDQ0Y7O0FERUE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtBQ0NGOztBREVBO0VBQ0UsK0JBQUE7QUNDRjs7QURFQTtFQUNFLFlBQUE7QUNDRjs7QURFQTtFQUNFLFVBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQ0NGOztBREVBO0VBQ0Usa0JBQUE7QUNDRjs7QURFQTtFQUNFLGtCQUFBO0VBQ0EsWUFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uZXctcHJvZHVjdC9uZXctcHJvZHVjdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuXHJcbiAgLm1hdC1lbGV2YXRpb24tejh7XHJcbiAgICBtYXJnaW46IDEwcHg7XHJcbiAgfVxyXG5cclxuaW9uLWljb24jZGVsZXRle1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBjb2xvcjogcmVkO1xyXG59XHJcblxyXG5pb24taWNvbiNlZGl0e1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxuICBjb2xvcjogIzYyNDYyQjtcclxufVxyXG5cclxuaW9uLWhlYWRlcntcclxuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjNjI0NjJCO1xyXG59XHJcblxyXG5pb24tdGl0bGV7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5tYXQtZm9ybS1maWVsZCNmaWx0ZXJ7XHJcbiAgd2lkdGg6IDk5JTtcclxuICBtYXJnaW46IDEwcHg7XHJcbn1cclxuXHJcbi5jcmVhdGV7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5pb24tY2FyZC1oZWFkZXJ7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4ubXktY29kZXtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDI1MHB4O1xyXG59IiwidGFibGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm1hdC1lbGV2YXRpb24tejgge1xuICBtYXJnaW46IDEwcHg7XG59XG5cbmlvbi1pY29uI2RlbGV0ZSB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgY29sb3I6IHJlZDtcbn1cblxuaW9uLWljb24jZWRpdCB7XG4gIGZvbnQtc2l6ZTogMzBweDtcbiAgY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi1oZWFkZXIge1xuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjNjI0NjJCO1xufVxuXG5pb24tdGl0bGUge1xuICBjb2xvcjogd2hpdGU7XG59XG5cbm1hdC1mb3JtLWZpZWxkI2ZpbHRlciB7XG4gIHdpZHRoOiA5OSU7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuLmNyZWF0ZSB7XG4gIG1hcmdpbjogMTBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbmlvbi1jYXJkLWhlYWRlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLm15LWNvZGUge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAyNTBweDtcbn0iXX0= */";
     /***/
   },
 
@@ -6332,69 +6332,57 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-    /* harmony import */
-
-
-    var _services_alert_service_alert_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _services_alert_service_alert_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../services/alert-service/alert-service.service */
     "./src/app/services/alert-service/alert-service.service.ts");
     /* harmony import */
 
 
-    var _services_spinner_service_spinner_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _services_spinner_service_spinner_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../../services/spinner-service/spinner.service */
     "./src/app/services/spinner-service/spinner.service.ts");
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
     /* harmony import */
 
 
-    var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! moment */
     "./node_modules/moment/moment.js");
     /* harmony import */
 
 
-    var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+    var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
     /* harmony import */
 
 
-    var _configurations_configHelper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _configurations_configHelper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../../configurations/configHelper */
     "./src/app/configurations/configHelper.ts");
     /* harmony import */
 
 
-    var _services_provider_service_provider_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _services_provider_service_provider_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../../services/provider-service/provider.service */
     "./src/app/services/provider-service/provider.service.ts");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
     var NewProductComponent = /*#__PURE__*/function () {
-      function NewProductComponent(productSrvc, modalCtrl, alertSrvc, spinnerSrvc, fb, providerSrvc, router) {
+      function NewProductComponent(productSrvc, alertSrvc, spinnerSrvc, fb, providerSrvc) {
         _classCallCheck(this, NewProductComponent);
 
         this.productSrvc = productSrvc;
-        this.modalCtrl = modalCtrl;
         this.alertSrvc = alertSrvc;
         this.spinnerSrvc = spinnerSrvc;
         this.fb = fb;
         this.providerSrvc = providerSrvc;
-        this.router = router;
-        this.onCOmpany = JSON.parse(localStorage.getItem(_configurations_configHelper__WEBPACK_IMPORTED_MODULE_8__["configHelper"].storageKeys.user));
-        this.updateData = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onCOmpany = JSON.parse(localStorage.getItem(_configurations_configHelper__WEBPACK_IMPORTED_MODULE_7__["configHelper"].storageKeys.user)); // tslint:disable-next-line: new-parens
+
+        this.updateData = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](); // tslint:disable-next-line: new-parens
+
         this.cancelCreate = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
       }
 
@@ -6408,8 +6396,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             _this2.ngOnInit();
 
-            _this2.spinnerSrvc.hide(); //this.router.navigate(['/products'])
-
+            _this2.spinnerSrvc.hide();
           }, function (error) {
             _this2.alertSrvc.okAlert('Error', error.message);
 
@@ -6435,7 +6422,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             vlOutput: [""],
             amount: [""],
             shelfLife: [""],
-            dtRegister: [moment__WEBPACK_IMPORTED_MODULE_7__(new Date()).format("DD/MM/YYYY HH:mm:ss")],
+            dtRegister: [moment__WEBPACK_IMPORTED_MODULE_6__(new Date()).format("DD/MM/YYYY HH:mm:ss")],
             idCompany: [this.onCOmpany[0].idCompany],
             inActive: ["S"]
           });
@@ -6460,17 +6447,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       return [{
         type: _services_product_service_product_service__WEBPACK_IMPORTED_MODULE_2__["ProductService"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]
+        type: _services_alert_service_alert_service_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]
       }, {
-        type: _services_alert_service_alert_service_service__WEBPACK_IMPORTED_MODULE_4__["AlertService"]
+        type: _services_spinner_service_spinner_service__WEBPACK_IMPORTED_MODULE_4__["SpinnerService"]
       }, {
-        type: _services_spinner_service_spinner_service__WEBPACK_IMPORTED_MODULE_5__["SpinnerService"]
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"]
       }, {
-        type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]
-      }, {
-        type: _services_provider_service_provider_service__WEBPACK_IMPORTED_MODULE_9__["ProviderService"]
-      }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"]
+        type: _services_provider_service_provider_service__WEBPACK_IMPORTED_MODULE_8__["ProviderService"]
       }];
     };
 
@@ -6504,7 +6487,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".mat-content > mat-panel-title, .mat-content > mat-panel-description {\n  flex: 0 0 auto;\n}\n\n.mat-expansion-panel-header-description {\n  display: flex;\n  justify-content: flex-end;\n}\n\ntable {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n\nmat-expansion-panel {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRldmljZS9DOlxcVXNlcnNcXGxzcmFlbFxcRGVza3RvcFxcZXN0b3F1ZVxcaW1BcHAvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHByb2R1Y3QtZGV2aWNlXFxwcm9kdWN0LWRldmljZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRldmljZS9wcm9kdWN0LWRldmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7QUNDSjs7QURFRTtFQUNFLGFBQUE7RUFDQSx5QkFBQTtBQ0NKOztBREVFO0VBQ0UsV0FBQTtBQ0NKOztBREVFO0VBQ0UsWUFBQTtBQ0NKOztBREVBO0VBQ0UsZUFBQTtFQUNBLFVBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7RUFDQSxjQUFBO0FDQ0Y7O0FERUE7RUFDRSwrQkFBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtBQ0NGOztBREVBO0VBQ0UsVUFBQTtFQUNBLFlBQUE7QUNDRjs7QURFQTtFQUNFLFlBQUE7RUFDQSxXQUFBO0FDQ0Y7O0FERUE7RUFDRSxrQkFBQTtBQ0NGOztBREVBO0VBQ0Usa0JBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FEQ0E7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QtZGV2aWNlL3Byb2R1Y3QtZGV2aWNlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1jb250ZW50ID4gbWF0LXBhbmVsLXRpdGxlLCAubWF0LWNvbnRlbnQgPiBtYXQtcGFuZWwtZGVzY3JpcHRpb24ge1xyXG4gICAgZmxleDogMCAwIGF1dG87XHJcbiAgfVxyXG5cclxuICAubWF0LWV4cGFuc2lvbi1wYW5lbC1oZWFkZXItZGVzY3JpcHRpb24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgfVxyXG5cclxuICB0YWJsZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcblxyXG4gIC5tYXQtZWxldmF0aW9uLXo4e1xyXG4gICAgbWFyZ2luOiAxMHB4O1xyXG4gIH1cclxuXHJcbmlvbi1pY29uI2RlbGV0ZXtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgY29sb3I6IHJlZDtcclxufVxyXG5cclxuaW9uLWljb24jZWRpdHtcclxuICBmb250LXNpemU6IDMwcHg7XHJcbiAgY29sb3I6ICM2MjQ2MkI7XHJcbn1cclxuXHJcbmlvbi1oZWFkZXJ7XHJcbiAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzYyNDYyQjtcclxufVxyXG5cclxuaW9uLXRpdGxle1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxubWF0LWZvcm0tZmllbGQjZmlsdGVye1xyXG4gIHdpZHRoOiA5OSU7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG59XHJcblxyXG4uY3JlYXRle1xyXG4gIG1hcmdpbjogMTBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuaW9uLWNhcmQtaGVhZGVye1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLm15LWNvZGV7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHdpZHRoOiAyNTBweDtcclxufVxyXG5tYXQtZXhwYW5zaW9uLXBhbmVse1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbn0iLCIubWF0LWNvbnRlbnQgPiBtYXQtcGFuZWwtdGl0bGUsIC5tYXQtY29udGVudCA+IG1hdC1wYW5lbC1kZXNjcmlwdGlvbiB7XG4gIGZsZXg6IDAgMCBhdXRvO1xufVxuXG4ubWF0LWV4cGFuc2lvbi1wYW5lbC1oZWFkZXItZGVzY3JpcHRpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xufVxuXG50YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWVsZXZhdGlvbi16OCB7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuaW9uLWljb24jZGVsZXRlIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogcmVkO1xufVxuXG5pb24taWNvbiNlZGl0IHtcbiAgZm9udC1zaXplOiAzMHB4O1xuICBjb2xvcjogIzYyNDYyQjtcbn1cblxuaW9uLWhlYWRlciB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxubWF0LWZvcm0tZmllbGQjZmlsdGVyIHtcbiAgd2lkdGg6IDk5JTtcbiAgbWFyZ2luOiAxMHB4O1xufVxuXG4uY3JlYXRlIHtcbiAgbWFyZ2luOiAxMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQtaGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubXktY29kZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDI1MHB4O1xufVxuXG5tYXQtZXhwYW5zaW9uLXBhbmVsIHtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = ".mat-content > mat-panel-title, .mat-content > mat-panel-description {\n  flex: 0 0 auto;\n}\n\n.mat-expansion-panel-header-description {\n  display: flex;\n  justify-content: flex-end;\n}\n\ntable {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n\nmat-expansion-panel {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRldmljZS9DOlxcVXNlcnNcXGxzcmFlbFxcRGVza3RvcFxcZGVza3RvcFxcZXN0b3F1ZVxcaW1BcHAvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHByb2R1Y3QtZGV2aWNlXFxwcm9kdWN0LWRldmljZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRldmljZS9wcm9kdWN0LWRldmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7QUNDSjs7QURFRTtFQUNFLGFBQUE7RUFDQSx5QkFBQTtBQ0NKOztBREVFO0VBQ0UsV0FBQTtBQ0NKOztBREVFO0VBQ0UsWUFBQTtBQ0NKOztBREVBO0VBQ0UsZUFBQTtFQUNBLFVBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7RUFDQSxjQUFBO0FDQ0Y7O0FERUE7RUFDRSwrQkFBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtBQ0NGOztBREVBO0VBQ0UsVUFBQTtFQUNBLFlBQUE7QUNDRjs7QURFQTtFQUNFLFlBQUE7RUFDQSxXQUFBO0FDQ0Y7O0FERUE7RUFDRSxrQkFBQTtBQ0NGOztBREVBO0VBQ0Usa0JBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FEQ0E7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QtZGV2aWNlL3Byb2R1Y3QtZGV2aWNlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1jb250ZW50ID4gbWF0LXBhbmVsLXRpdGxlLCAubWF0LWNvbnRlbnQgPiBtYXQtcGFuZWwtZGVzY3JpcHRpb24ge1xyXG4gICAgZmxleDogMCAwIGF1dG87XHJcbiAgfVxyXG5cclxuICAubWF0LWV4cGFuc2lvbi1wYW5lbC1oZWFkZXItZGVzY3JpcHRpb24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgfVxyXG5cclxuICB0YWJsZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcblxyXG4gIC5tYXQtZWxldmF0aW9uLXo4e1xyXG4gICAgbWFyZ2luOiAxMHB4O1xyXG4gIH1cclxuXHJcbmlvbi1pY29uI2RlbGV0ZXtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgY29sb3I6IHJlZDtcclxufVxyXG5cclxuaW9uLWljb24jZWRpdHtcclxuICBmb250LXNpemU6IDMwcHg7XHJcbiAgY29sb3I6ICM2MjQ2MkI7XHJcbn1cclxuXHJcbmlvbi1oZWFkZXJ7XHJcbiAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzYyNDYyQjtcclxufVxyXG5cclxuaW9uLXRpdGxle1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxubWF0LWZvcm0tZmllbGQjZmlsdGVye1xyXG4gIHdpZHRoOiA5OSU7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG59XHJcblxyXG4uY3JlYXRle1xyXG4gIG1hcmdpbjogMTBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuaW9uLWNhcmQtaGVhZGVye1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLm15LWNvZGV7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHdpZHRoOiAyNTBweDtcclxufVxyXG5tYXQtZXhwYW5zaW9uLXBhbmVse1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbn0iLCIubWF0LWNvbnRlbnQgPiBtYXQtcGFuZWwtdGl0bGUsIC5tYXQtY29udGVudCA+IG1hdC1wYW5lbC1kZXNjcmlwdGlvbiB7XG4gIGZsZXg6IDAgMCBhdXRvO1xufVxuXG4ubWF0LWV4cGFuc2lvbi1wYW5lbC1oZWFkZXItZGVzY3JpcHRpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xufVxuXG50YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWVsZXZhdGlvbi16OCB7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuaW9uLWljb24jZGVsZXRlIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogcmVkO1xufVxuXG5pb24taWNvbiNlZGl0IHtcbiAgZm9udC1zaXplOiAzMHB4O1xuICBjb2xvcjogIzYyNDYyQjtcbn1cblxuaW9uLWhlYWRlciB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxubWF0LWZvcm0tZmllbGQjZmlsdGVyIHtcbiAgd2lkdGg6IDk5JTtcbiAgbWFyZ2luOiAxMHB4O1xufVxuXG4uY3JlYXRlIHtcbiAgbWFyZ2luOiAxMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQtaGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubXktY29kZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDI1MHB4O1xufVxuXG5tYXQtZXhwYW5zaW9uLXBhbmVsIHtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbn0iXX0= */";
     /***/
   },
 
@@ -6624,7 +6607,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LXRhYmxlL0M6XFxVc2Vyc1xcbHNyYWVsXFxEZXNrdG9wXFxlc3RvcXVlXFxpbUFwcC9zcmNcXGFwcFxcY29tcG9uZW50c1xccHJvZHVjdC10YWJsZVxccHJvZHVjdC10YWJsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LXRhYmxlL3Byb2R1Y3QtdGFibGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FERUU7RUFDRSxZQUFBO0FDQ0o7O0FERUE7RUFDRSxlQUFBO0VBQ0EsVUFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7QUNDRjs7QURFQTtFQUNFLCtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxVQUFBO0VBQ0EsWUFBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUNDRjs7QURFQTtFQUNFLGtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxrQkFBQTtFQUNBLFlBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC10YWJsZS9wcm9kdWN0LXRhYmxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG5cclxuICAubWF0LWVsZXZhdGlvbi16OHtcclxuICAgIG1hcmdpbjogMTBweDtcclxuICB9XHJcblxyXG5pb24taWNvbiNkZWxldGV7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGNvbG9yOiByZWQ7XHJcbn1cclxuXHJcbmlvbi1pY29uI2VkaXR7XHJcbiAgZm9udC1zaXplOiAzMHB4O1xyXG4gIGNvbG9yOiAjNjI0NjJCO1xyXG59XHJcblxyXG5pb24taGVhZGVye1xyXG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XHJcbn1cclxuXHJcbmlvbi10aXRsZXtcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbm1hdC1mb3JtLWZpZWxkI2ZpbHRlcntcclxuICB3aWR0aDogOTklO1xyXG4gIG1hcmdpbjogMTBweDtcclxufVxyXG5cclxuLmNyZWF0ZXtcclxuICBtYXJnaW46IDEwcHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmlvbi1jYXJkLWhlYWRlcntcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5teS1jb2Rle1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogMjUwcHg7XHJcbn0iLCJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWVsZXZhdGlvbi16OCB7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuaW9uLWljb24jZGVsZXRlIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogcmVkO1xufVxuXG5pb24taWNvbiNlZGl0IHtcbiAgZm9udC1zaXplOiAzMHB4O1xuICBjb2xvcjogIzYyNDYyQjtcbn1cblxuaW9uLWhlYWRlciB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxubWF0LWZvcm0tZmllbGQjZmlsdGVyIHtcbiAgd2lkdGg6IDk5JTtcbiAgbWFyZ2luOiAxMHB4O1xufVxuXG4uY3JlYXRlIHtcbiAgbWFyZ2luOiAxMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQtaGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubXktY29kZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDI1MHB4O1xufSJdfQ== */";
+    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LXRhYmxlL0M6XFxVc2Vyc1xcbHNyYWVsXFxEZXNrdG9wXFxkZXNrdG9wXFxlc3RvcXVlXFxpbUFwcC9zcmNcXGFwcFxcY29tcG9uZW50c1xccHJvZHVjdC10YWJsZVxccHJvZHVjdC10YWJsZS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LXRhYmxlL3Byb2R1Y3QtdGFibGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FERUU7RUFDRSxZQUFBO0FDQ0o7O0FERUE7RUFDRSxlQUFBO0VBQ0EsVUFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7QUNDRjs7QURFQTtFQUNFLCtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxVQUFBO0VBQ0EsWUFBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUNDRjs7QURFQTtFQUNFLGtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxrQkFBQTtFQUNBLFlBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC10YWJsZS9wcm9kdWN0LXRhYmxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfVxyXG5cclxuICAubWF0LWVsZXZhdGlvbi16OHtcclxuICAgIG1hcmdpbjogMTBweDtcclxuICB9XHJcblxyXG5pb24taWNvbiNkZWxldGV7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGNvbG9yOiByZWQ7XHJcbn1cclxuXHJcbmlvbi1pY29uI2VkaXR7XHJcbiAgZm9udC1zaXplOiAzMHB4O1xyXG4gIGNvbG9yOiAjNjI0NjJCO1xyXG59XHJcblxyXG5pb24taGVhZGVye1xyXG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XHJcbn1cclxuXHJcbmlvbi10aXRsZXtcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbm1hdC1mb3JtLWZpZWxkI2ZpbHRlcntcclxuICB3aWR0aDogOTklO1xyXG4gIG1hcmdpbjogMTBweDtcclxufVxyXG5cclxuLmNyZWF0ZXtcclxuICBtYXJnaW46IDEwcHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmlvbi1jYXJkLWhlYWRlcntcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5teS1jb2Rle1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB3aWR0aDogMjUwcHg7XHJcbn0iLCJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWVsZXZhdGlvbi16OCB7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuaW9uLWljb24jZGVsZXRlIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogcmVkO1xufVxuXG5pb24taWNvbiNlZGl0IHtcbiAgZm9udC1zaXplOiAzMHB4O1xuICBjb2xvcjogIzYyNDYyQjtcbn1cblxuaW9uLWhlYWRlciB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxubWF0LWZvcm0tZmllbGQjZmlsdGVyIHtcbiAgd2lkdGg6IDk5JTtcbiAgbWFyZ2luOiAxMHB4O1xufVxuXG4uY3JlYXRlIHtcbiAgbWFyZ2luOiAxMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQtaGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubXktY29kZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDI1MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -6743,8 +6726,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           var _this6 = this;
 
-          this.spinnerSrvc.hide();
-          console.log('Compania', this.onCOmpany[0].idCompany); // usando forkjoin para requisição dupla.
+          this.spinnerSrvc.hide(); // usando forkjoin para requisição dupla.
 
           this.productSrvc.getProducts(this.onCOmpany[0].idCompany).subscribe(function (res) {
             _this6.dataSource.data = res[0]; // this.providers = res[1];
@@ -6776,8 +6758,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
-                    console.log('TEDSTE');
-                    _context.next = 3;
+                    _context.next = 2;
                     return this.modalCtrl.create({
                       component: _modal_edit_product_modal_edit_product_page__WEBPACK_IMPORTED_MODULE_10__["ModalEditProductPage"],
                       componentProps: {
@@ -6785,18 +6766,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       }
                     });
 
-                  case 3:
+                  case 2:
                     modal = _context.sent;
                     modal.onDidDismiss().then(function () {
                       _this7.ngOnInit();
                     });
-                    _context.next = 7;
+                    _context.next = 6;
                     return modal.present();
 
-                  case 7:
+                  case 6:
                     return _context.abrupt("return", _context.sent);
 
-                  case 8:
+                  case 7:
                   case "end":
                     return _context.stop();
                 }
@@ -6861,9 +6842,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               while (1) {
                 switch (_context3.prev = _context3.next) {
                   case 0:
-                    this.alertSrvc.confirm("Deseja excluir o cliente  ?", function () {
+                    this.alertSrvc.confirm("Deseja excluir o produto  ?", function () {
                       _this9.productSrvc.deleteProduct(param).subscribe(function () {
-                        _this9.alertSrvc.toast("O cliente  foi excluido com sucesso. ", 2000, 'top'); // this.router.navigate(['/products']);
+                        _this9.alertSrvc.toast("O produto  foi excluido com sucesso. ", 2000, 'top'); // this.router.navigate(['/products']);
 
 
                         _this9.ngOnInit(); // this.spinnerSrvc.hide();
@@ -7172,7 +7153,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdHMvQzpcXFVzZXJzXFxsc3JhZWxcXERlc2t0b3BcXGVzdG9xdWVcXGltQXBwL3NyY1xcYXBwXFxwcm9kdWN0c1xccHJvZHVjdHMucGFnZS5zY3NzIiwic3JjL2FwcC9wcm9kdWN0cy9wcm9kdWN0cy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FERUU7RUFDRSxZQUFBO0FDQ0o7O0FERUE7RUFDRSxlQUFBO0VBQ0EsVUFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7QUNDRjs7QURFQTtFQUNFLCtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxVQUFBO0VBQ0EsWUFBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUNDRjs7QURFQTtFQUNFLGtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxrQkFBQTtFQUNBLFlBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3RzL3Byb2R1Y3RzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuXHJcbiAgLm1hdC1lbGV2YXRpb24tejh7XHJcbiAgICBtYXJnaW46IDEwcHg7XHJcbiAgfVxyXG5cclxuaW9uLWljb24jZGVsZXRle1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBjb2xvcjogcmVkO1xyXG59XHJcblxyXG5pb24taWNvbiNlZGl0e1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxuICBjb2xvcjogIzYyNDYyQjtcclxufVxyXG5cclxuaW9uLWhlYWRlcntcclxuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjNjI0NjJCO1xyXG59XHJcblxyXG5pb24tdGl0bGV7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5tYXQtZm9ybS1maWVsZCNmaWx0ZXJ7XHJcbiAgd2lkdGg6IDk5JTtcclxuICBtYXJnaW46IDEwcHg7XHJcbn1cclxuXHJcbi5jcmVhdGV7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5pb24tY2FyZC1oZWFkZXJ7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4ubXktY29kZXtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDI1MHB4O1xyXG59IiwidGFibGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm1hdC1lbGV2YXRpb24tejgge1xuICBtYXJnaW46IDEwcHg7XG59XG5cbmlvbi1pY29uI2RlbGV0ZSB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgY29sb3I6IHJlZDtcbn1cblxuaW9uLWljb24jZWRpdCB7XG4gIGZvbnQtc2l6ZTogMzBweDtcbiAgY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi1oZWFkZXIge1xuICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjNjI0NjJCO1xufVxuXG5pb24tdGl0bGUge1xuICBjb2xvcjogd2hpdGU7XG59XG5cbm1hdC1mb3JtLWZpZWxkI2ZpbHRlciB7XG4gIHdpZHRoOiA5OSU7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuLmNyZWF0ZSB7XG4gIG1hcmdpbjogMTBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbmlvbi1jYXJkLWhlYWRlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLm15LWNvZGUge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHdpZHRoOiAyNTBweDtcbn0iXX0= */";
+    __webpack_exports__["default"] = "table {\n  width: 100%;\n}\n\n.mat-elevation-z8 {\n  margin: 10px;\n}\n\nion-icon#delete {\n  font-size: 20px;\n  color: red;\n}\n\nion-icon#edit {\n  font-size: 30px;\n  color: #62462B;\n}\n\nion-header {\n  --ion-background-color: #62462B;\n}\n\nion-title {\n  color: white;\n}\n\nmat-form-field#filter {\n  width: 99%;\n  margin: 10px;\n}\n\n.create {\n  margin: 10px;\n  width: 100%;\n}\n\nion-card-header {\n  text-align: center;\n}\n\n.my-code {\n  text-align: center;\n  width: 250px;\n}\n\n.list {\n  padding: 10px;\n  float: right;\n}\n\n.list__item {\n  float: right;\n}\n\n.list__item--active .list__item {\n  color: green;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdHMvQzpcXFVzZXJzXFxsc3JhZWxcXERlc2t0b3BcXGRlc2t0b3BcXGVzdG9xdWVcXGltQXBwL3NyY1xcYXBwXFxwcm9kdWN0c1xccHJvZHVjdHMucGFnZS5zY3NzIiwic3JjL2FwcC9wcm9kdWN0cy9wcm9kdWN0cy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0FDQ0o7O0FERUU7RUFDRSxZQUFBO0FDQ0o7O0FERUE7RUFDRSxlQUFBO0VBQ0EsVUFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGNBQUE7QUNDRjs7QURFQTtFQUNFLCtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxVQUFBO0VBQ0EsWUFBQTtBQ0NGOztBREVBO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUNDRjs7QURFQTtFQUNFLGtCQUFBO0FDQ0Y7O0FERUE7RUFDRSxrQkFBQTtFQUNBLFlBQUE7QUNDRjs7QURFQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0FDQ0E7O0FERUE7RUFDRSxZQUFBO0FDQ0Y7O0FERUE7RUFDQSxZQUFBO0FDQ0EiLCJmaWxlIjoic3JjL2FwcC9wcm9kdWN0cy9wcm9kdWN0cy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0YWJsZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcblxyXG4gIC5tYXQtZWxldmF0aW9uLXo4e1xyXG4gICAgbWFyZ2luOiAxMHB4O1xyXG4gIH1cclxuXHJcbmlvbi1pY29uI2RlbGV0ZXtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgY29sb3I6IHJlZDtcclxufVxyXG5cclxuaW9uLWljb24jZWRpdHtcclxuICBmb250LXNpemU6IDMwcHg7XHJcbiAgY29sb3I6ICM2MjQ2MkI7XHJcbn1cclxuXHJcbmlvbi1oZWFkZXJ7XHJcbiAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzYyNDYyQjtcclxufVxyXG5cclxuaW9uLXRpdGxle1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxubWF0LWZvcm0tZmllbGQjZmlsdGVye1xyXG4gIHdpZHRoOiA5OSU7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG59XHJcblxyXG4uY3JlYXRle1xyXG4gIG1hcmdpbjogMTBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuaW9uLWNhcmQtaGVhZGVye1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLm15LWNvZGV7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHdpZHRoOiAyNTBweDtcclxufVxyXG5cclxuLmxpc3R7XHJcbnBhZGRpbmc6IDEwcHg7XHJcbmZsb2F0OiByaWdodDtcclxufVxyXG5cclxuLmxpc3RfX2l0ZW17XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcblxyXG4ubGlzdF9faXRlbS0tYWN0aXZlIC5saXN0X19pdGVte1xyXG5jb2xvcjogZ3JlZW47XHJcbn0iLCJ0YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4ubWF0LWVsZXZhdGlvbi16OCB7XG4gIG1hcmdpbjogMTBweDtcbn1cblxuaW9uLWljb24jZGVsZXRlIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBjb2xvcjogcmVkO1xufVxuXG5pb24taWNvbiNlZGl0IHtcbiAgZm9udC1zaXplOiAzMHB4O1xuICBjb2xvcjogIzYyNDYyQjtcbn1cblxuaW9uLWhlYWRlciB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICM2MjQ2MkI7XG59XG5cbmlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxubWF0LWZvcm0tZmllbGQjZmlsdGVyIHtcbiAgd2lkdGg6IDk5JTtcbiAgbWFyZ2luOiAxMHB4O1xufVxuXG4uY3JlYXRlIHtcbiAgbWFyZ2luOiAxMHB4O1xuICB3aWR0aDogMTAwJTtcbn1cblxuaW9uLWNhcmQtaGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4ubXktY29kZSB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgd2lkdGg6IDI1MHB4O1xufVxuXG4ubGlzdCB7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGZsb2F0OiByaWdodDtcbn1cblxuLmxpc3RfX2l0ZW0ge1xuICBmbG9hdDogcmlnaHQ7XG59XG5cbi5saXN0X19pdGVtLS1hY3RpdmUgLmxpc3RfX2l0ZW0ge1xuICBjb2xvcjogZ3JlZW47XG59Il19 */";
     /***/
   },
 
@@ -7255,9 +7236,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _services_spinner_service_spinner_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ../services/spinner-service/spinner.service */
     "./src/app/services/spinner-service/spinner.service.ts");
+    /* harmony import */
+
+
+    var _ionic_native_web_intent_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! @ionic-native/web-intent/ngx */
+    "./node_modules/@ionic-native/web-intent/__ivy_ngcc__/ngx/index.js");
 
     var ProductsPage = /*#__PURE__*/function () {
-      function ProductsPage(productSrvc, menuCtrl, barcodeScanner, platform, modalCtrl, alertSrvc, router, spinnerSrvc) {
+      function ProductsPage(productSrvc, menuCtrl, barcodeScanner, platform, modalCtrl, alertSrvc, router, spinnerSrvc, webIntent) {
         var _this10 = this;
 
         _classCallCheck(this, ProductsPage);
@@ -7270,17 +7257,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.alertSrvc = alertSrvc;
         this.router = router;
         this.spinnerSrvc = spinnerSrvc;
+        this.webIntent = webIntent;
         this.scannerCode = null;
-        this.elementType = "img";
+        this.elementType = 'img';
         this.showQrCode = false;
         this.create = false;
-        this.isDevice = this.platform.is("cordova");
+        this.isDevice = this.platform.is('cordova');
         this.onCOmpany = JSON.parse(localStorage.getItem(_configurations_configHelper__WEBPACK_IMPORTED_MODULE_4__["configHelper"].storageKeys.user));
         this.platform.backButton.subscribeWithPriority(0, function () {
           if (_this10.routerOutlet && _this10.routerOutlet.canGoBack()) {
             _this10.routerOutlet.pop();
           } else if (_this10.router.url === '/LoginPage') {
-            //this.platform.exitApp(); 
+            //this.platform.exitApp();
             // or if that doesn't work, try
             navigator['app'].exitApp();
           } else {//      this.generic.showAlert("Exit", "Do you want to exit the app?", this.onYesHandler, this.onNoHandler, "backPress");
@@ -7295,8 +7283,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ProductsPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          this.webIntent.getIntent().then(function (data) {
+            console.log(data);
+          });
           this.spinnerSrvc.hide();
-          console.log("Compania", this.onCOmpany[0].idCompany);
+          console.log('Compania', this.onCOmpany[0].idCompany);
         }
       }, {
         key: "ionViewDidEnter",
@@ -7323,7 +7314,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.qrData = param.cdProduct;
           this.showQrCode = true;
           console.log(param);
-          this.qrCode = document.querySelector("img");
+          this.qrCode = document.querySelector('img');
           console.log(this.qrCode);
         }
       }, {
@@ -7347,7 +7338,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                         }
 
                         console.log('BARCODE CANCELado', barcodeData);
-                        this.alertSrvc.toast("Nenhum Qr Code foi lido, tente novamente", 2000, 'top');
+                        this.alertSrvc.toast('Nenhum Qr Code foi lido, tente novamente', 2000, 'top');
                         _context4.next = 15;
                         break;
 
@@ -7358,7 +7349,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                         }
 
                         this.scannerCode = barcodeData.text;
-                        console.log("Código do qr code", this.scannerCode);
+                        console.log('Código do qr code', this.scannerCode);
                         _context4.next = 11;
                         return this.modalCtrl.create({
                           component: _find_by_qr_code_find_by_qr_code_page__WEBPACK_IMPORTED_MODULE_6__["FindByQrCodePage"],
@@ -7419,12 +7410,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]
       }, {
         type: _services_spinner_service_spinner_service__WEBPACK_IMPORTED_MODULE_9__["SpinnerService"]
+      }, {
+        type: _ionic_native_web_intent_ngx__WEBPACK_IMPORTED_MODULE_10__["WebIntent"]
       }];
     };
 
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonRouterOutlet"])], ProductsPage.prototype, "routerOutlet", void 0);
     ProductsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: "app-products",
+      selector: 'app-products',
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
       /*! raw-loader!./products.page.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/products/products.page.html"))["default"],
@@ -7432,95 +7425,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./products.page.scss */
       "./src/app/products/products.page.scss"))["default"]]
     })], ProductsPage);
-    /***/
-  },
-
-  /***/
-  "./src/app/services/provider-service/provider.service.ts":
-  /*!***************************************************************!*\
-    !*** ./src/app/services/provider-service/provider.service.ts ***!
-    \***************************************************************/
-
-  /*! exports provided: ProviderService */
-
-  /***/
-  function srcAppServicesProviderServiceProviderServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "ProviderService", function () {
-      return ProviderService;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var src_app_configurations_configHelper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! src/app/configurations/configHelper */
-    "./src/app/configurations/configHelper.ts");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _http_service_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../http-service/http.service */
-    "./src/app/services/http-service/http.service.ts");
-
-    var ProviderService = /*#__PURE__*/function () {
-      function ProviderService(http) {
-        _classCallCheck(this, ProviderService);
-
-        this.http = http;
-        this.url = "".concat(src_app_configurations_configHelper__WEBPACK_IMPORTED_MODULE_1__["configHelper"].URL, "/provider");
-      }
-
-      _createClass(ProviderService, [{
-        key: "getProviders",
-        value: function getProviders(id) {
-          return this.http.get("".concat(this.url, "/").concat(id));
-        }
-      }, {
-        key: "addProvider",
-        value: function addProvider(data) {
-          return this.http.post("".concat(this.url), data);
-        }
-      }, {
-        key: "updateProvider",
-        value: function updateProvider(data) {
-          return this.http.put("".concat(this.url, "/").concat(data.idProvider), data);
-        }
-      }, {
-        key: "deleteProvider",
-        value: function deleteProvider(id) {
-          return this.http["delete"]("".concat(this.url), id);
-        }
-      }]);
-
-      return ProviderService;
-    }();
-
-    ProviderService.ctorParameters = function () {
-      return [{
-        type: _http_service_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"]
-      }];
-    };
-
-    ProviderService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-      providedIn: 'root'
-    })], ProviderService);
     /***/
   }
 }]);

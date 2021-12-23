@@ -7,17 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { SalesPageRoutingModule } from './sales-routing.module';
 
 import { SalesPage } from './sales.page';
-import { MatFormFieldModule} from '@angular/material/form-field';
-import { MatInputModule} from '@angular/material/input';
-import {MatIconModule } from '@angular/material/icon';
-import { MatButtonModule} from '@angular/material/button';
-import { MatCheckboxModule} from '@angular/material/checkbox';
-import { MatPaginatorModule} from '@angular/material/paginator';
-import { MatDividerModule} from '@angular/material/divider';
-import { MatSelectModule} from '@angular/material/select';
-import { MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from "@angular/material/expansion";
 import { PipesModule } from '../../pipes/pipes.module';
+import { SaleTableComponent } from '../components/sale-table/sale-table.component';
 
 
 @NgModule({
@@ -37,6 +38,6 @@ import { PipesModule } from '../../pipes/pipes.module';
     PipesModule,
     SalesPageRoutingModule
   ],
-  declarations: [SalesPage]
+  declarations: [SalesPage, SaleTableComponent]
 })
-export class SalesPageModule {}
+export class SalesPageModule { }

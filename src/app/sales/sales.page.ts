@@ -1,12 +1,12 @@
 import { Platform } from '@ionic/angular';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
 import { configHelper } from '../configurations/configHelper';
 import { SaleService } from '../services/sale-service/sale.service';
 import { SpinnerService } from '../services/spinner-service/spinner.service';
 import { AlertService } from '../services/alert-service/alert-service.service';
 import { ProductService } from '../services/product-service/product.service';
 import { MatPaginator } from '@angular/material/paginator';
-//import { PeriodicElement } from '../products/products.page';
+import { PeriodicElement } from '../models/periodicElementModel';
 import { MatTableDataSource } from '@angular/material/table';
 import * as moment from 'moment';
 
@@ -20,7 +20,7 @@ export class SalesPage implements OnInit {
   sales;
   total = 0;
   onCampany = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
-  isDevice: boolean = this.platform.is("cordova"); 
+  isDevice: boolean = this.platform.is("cordova");
 
   constructor(
     private saleSrvc: SaleService,
@@ -28,9 +28,8 @@ export class SalesPage implements OnInit {
     private alertSrvc: AlertService,
     private productSrvc: ProductService,
     private platform: Platform
-  ) {}
+  ) { }
   displayedColumns: string[] = [
-    // 'edit',
     'name',
     'manufacturer',
     'provider',
@@ -42,7 +41,7 @@ export class SalesPage implements OnInit {
     'lucro',
     'delete',
   ];
-  dataSource = new MatTableDataSource<any>(this.sales);
+  dataSource = new MatTableDataSource<any>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngOnInit() {
@@ -57,6 +56,7 @@ export class SalesPage implements OnInit {
       }
       this.dataSource.data = sale;
       this.sales = sale;
+      console.log('Sales', this.sales)
       this.spinnerSrvc.hide();
     });
     this.dataSource.paginator = this.paginator;

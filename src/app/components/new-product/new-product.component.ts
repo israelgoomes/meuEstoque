@@ -18,18 +18,18 @@ export class NewProductComponent implements OnInit {
   productForm: FormGroup;
   onCOmpany = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
   providers: any;
+  // tslint:disable-next-line: new-parens
   @Output() updateData = new EventEmitter;
+  // tslint:disable-next-line: new-parens
   @Output() cancelCreate = new EventEmitter;
   constructor(
     private productSrvc: ProductService,
-    private modalCtrl: ModalController,
     private alertSrvc: AlertService,
     private spinnerSrvc: SpinnerService,
     private fb: FormBuilder,
     private providerSrvc: ProviderService,
-    private router: Router
   ) {
-   
+
   }
 
   save() {
@@ -37,15 +37,14 @@ export class NewProductComponent implements OnInit {
       this.alertSrvc.toast(`${this.productForm.get('name').value} cadastrado com sucesso!`, 2000, 'top');
       this.ngOnInit();
       this.spinnerSrvc.hide();
-      //this.router.navigate(['/products'])
     }, error => {
-        this.alertSrvc.okAlert('Error', error.message);
-        this.spinnerSrvc.hide();
+      this.alertSrvc.okAlert('Error', error.message);
+      this.spinnerSrvc.hide();
     });
     this.productSrvc.updtaeProductData.emit();
   }
 
-  cancel(){
+  cancel() {
     this.cancelCreate.emit(false)
   }
 

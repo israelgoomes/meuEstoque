@@ -5,7 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -15,6 +15,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 import { Base64ToGallery } from "@ionic-native/base64-to-gallery/ngx";
+import { WebIntent } from '@ionic-native/web-intent/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,10 +34,13 @@ import { Base64ToGallery } from "@ionic-native/base64-to-gallery/ngx";
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     BarcodeScanner,
     Base64ToGallery,
+    WebIntent,
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

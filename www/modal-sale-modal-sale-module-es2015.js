@@ -163,6 +163,74 @@ AlertService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 
 
+/***/ }),
+
+/***/ "./src/app/services/product-service/product.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/services/product-service/product.service.ts ***!
+  \*************************************************************/
+/*! exports provided: ProductService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _configurations_configHelper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../configurations/configHelper */ "./src/app/configurations/configHelper.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _http_service_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http-service/http.service */ "./src/app/services/http-service/http.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+
+
+
+
+
+let ProductService = class ProductService {
+    constructor(http, htt2) {
+        this.http = http;
+        this.htt2 = htt2;
+        this.updtaeProductData = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.url = `${_configurations_configHelper__WEBPACK_IMPORTED_MODULE_1__["configHelper"].URL2}/product`;
+    }
+    getProducts(id) {
+        const product = this.http.get(`${this.url}/${id}`);
+        // const provider= this.http.get(`${configHelper.URL}/provider/${id}`);
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["forkJoin"])([product]);
+        //this.http.get(`${this.url}/${id}`)
+    }
+    deleteProduct(id) {
+        return this.http.delete(`${this.url}`, id);
+    }
+    update(data) {
+        return this.http.put(`${this.url}/${data.idProduct}`, data);
+    }
+    createProduct(data) {
+        return this.http.post(`${this.url}`, data);
+    }
+    updateForSale(id, data) {
+        return this.http.put(`${this.url}/cancel-sale/${id}`, data);
+    }
+    getScanCode(id, cdProduct) {
+        cdProduct = {
+            cdProduct: cdProduct,
+        };
+        return this.http.post(`${this.url}/cdProduct/${id}`, cdProduct);
+    }
+};
+ProductService.ctorParameters = () => [
+    { type: _http_service_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
+];
+ProductService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        providedIn: 'root',
+    })
+], ProductService);
+
+
+
 /***/ })
 
 }]);

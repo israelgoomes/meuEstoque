@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { HttpService } from '../http-service/http.service';
 import { forkJoin } from 'rxjs';
 import { ProductModel } from '../../models/tbProductModel';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   url: string;
-  constructor(private http: HttpService) {
-    this.url = `${configHelper.URL2}/product`;
+  constructor(private http: HttpService, private htt2: HttpClient) {
+    this.url = `${configHelper.URL}/product`;
   }
 
   updtaeProductData = new EventEmitter();

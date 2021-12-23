@@ -3,5 +3,11 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/v1/",
+      "proxyUrl": "https://hml.wm.bbmapfre.com.br/"
+    }
+  ]
 }

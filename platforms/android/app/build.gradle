@@ -98,8 +98,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "../phonegap-plugin-barcodescanner/starter-barcodescanner.gradle"
-apply from: "../onesignal-cordova-plugin/starter-build-extras-onesignal.gradle"
+apply from: "../cordova-plugin-facebook4/imapp-build.gradle"
+apply from: "../phonegap-plugin-barcodescanner/imapp-barcodescanner.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -295,9 +295,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
+    implementation "com.android.support:support-v4:27.1.0"
     implementation "com.android.support:support-annotations:27.+"
     implementation "com.android.support:support-v4:27.+"
-    implementation "com.onesignal:OneSignal:3.15.1"
     // SUB-PROJECT DEPENDENCIES END
 }
 

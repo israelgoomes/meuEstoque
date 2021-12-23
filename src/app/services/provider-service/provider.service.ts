@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ProviderService {
   url: string;
   constructor(private http: HttpService) {
-    this.url = `${configHelper.URL2}/provider`;
+    this.url = `${configHelper.URL}/provider`;
   }
 
   public getProviders(id: number): Observable<any> {

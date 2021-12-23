@@ -4,25 +4,25 @@
 
 <ion-content>
 
-<ion-card text-center>
-  <ion-card-header>
-    <ngx-qrcode element-type="img" [value]="product[0]?.cdProduct" class="my-code">
-    </ngx-qrcode>
-    {{product[0]?.cdProduct}}
-    <h2>Produto: {{product[0]?.name}}</h2>
-  </ion-card-header>
-  <ion-card-content>
-    <p>Fabricante: {{product[0]?.manufacturer}}</p>
-    <p>Fornecedor: {{product[0]?.provider}}</p>
-    <p>Quantidade: {{product[0]?.amount}}</p>
-    <p>Data de Registro: {{product[0]?.dtRegister}}</p>
-    <p>Código: {{product[0]?.cdProduct}}</p>
-    <p>Preço: R$ {{product[0]?.vlInput}}</p>
-    <p>Valor de entrada: R$ {{product[0]?.vlOutput}}</p>
-    <!-- <p>{{product[0]?.name}}</p> -->
+  <ion-card text-center>
+    <ion-card-header>
+      <ngx-qrcode element-type="img" [value]="product[0]?.cdProduct" class="my-code">
+      </ngx-qrcode>
+      {{product[0]?.cdProduct}}
+      <h2>Produto: {{product[0]?.name}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Fabricante: {{product[0]?.manufacturer}}</p>
+      <p>Fornecedor: {{product[0]?.provider}}</p>
+      <p>Quantidade: {{product[0]?.amount}}</p>
+      <p>Data de Registro: {{product[0]?.dtRegister}}</p>
+      <p>Código: {{product[0]?.cdProduct}}</p>
+      <!-- <p>Valor de entrada: R$ {{product[0]?.vlInput}}</p> -->
+      <p>Preço: R$ {{product[0]?.vlOutput}}</p>
+      <!-- <p>{{product[0]?.name}}</p> -->
 
 
-  </ion-card-content>
-</ion-card>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

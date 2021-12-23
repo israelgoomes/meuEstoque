@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { configHelper } from '../configurations/configHelper';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProviderService } from '../services/provider-service/provider.service';
@@ -7,6 +7,7 @@ import { AlertService } from '../services/alert-service/alert-service.service';
 import { ModalController, Platform } from '@ionic/angular';
 //import { PeriodicElement } from '../products/products.page';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-provider',
@@ -18,7 +19,7 @@ export class ProviderPage implements OnInit {
   providerForm: FormGroup;
   providers = [];
   create: boolean = false;
-  isDevice: boolean = this.platform.is("cordova"); 
+  isDevice: boolean = this.platform.is("cordova");
 
   constructor(
     private providerSrvc: ProviderService,
@@ -27,9 +28,10 @@ export class ProviderPage implements OnInit {
     private alertSrvc: AlertService,
     private modalCtrl: ModalController,
     private platform: Platform
-  ) {}
+  ) { }
   displayedColumns: string[] = ["edit", "name", "email", "address", "cnpj", "delete"];
   dataSource = new MatTableDataSource<any>();
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngOnInit() {
     this.spinnerSrvc.hide();
@@ -49,6 +51,8 @@ export class ProviderPage implements OnInit {
         console.log(data);
         this.spinnerSrvc.hide();
       });
+
+    this.dataSource.paginator = this.paginator;
   }
 
   addProvider() {
@@ -84,7 +88,7 @@ export class ProviderPage implements OnInit {
     // return await modal.present();
   }
 
-  cancel(){
+  cancel() {
     this.create = false;
   }
 
@@ -93,10 +97,10 @@ export class ProviderPage implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  deleteProvider(param){
+  deleteProvider(param) {
 
 
-    this.alertSrvc.confirm(`Deseja excluir o cliente  ?`, () => {
+    this.alertSrvc.confirm(`Deseja excluir o fornecedor  ?`, () => {
       this.providerSrvc.deleteProvider(param.idProvider).subscribe(
         () => {
           this.alertSrvc.toast(

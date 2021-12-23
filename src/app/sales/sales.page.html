@@ -10,112 +10,44 @@
 
 <ion-content>
 
-  <div *ngIf="!isDevice">
-  <mat-form-field id="filter">
-    <mat-label>Procurar</mat-label>
-    <input matInput (keyup)="applyFilter($event)">
-  </mat-form-field>
+  <app-sale-table *ngIf="sales && !isDevice" [data]="sales" (cancel)="cancelSale($event)"></app-sale-table>
 
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+  <div *ngIf="isDevice">
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let element"> {{element?.name}} </td>
-    </ng-container>
-    
-    <ng-container matColumnDef="manufacturer">
-      <th mat-header-cell *matHeaderCellDef> Fabricante </th>
-      <td mat-cell *matCellDef="let element"> {{element?.manufacturer}} </td>
-    </ng-container>
+    <mat-form-field id="filter">
+      <mat-label>Procurar</mat-label>
+      <input matInput [(ngModel)]="args">
+    </mat-form-field>
 
-    <ng-container matColumnDef="provider">
-      <th mat-header-cell *matHeaderCellDef> Fornecedor </th>
-      <td mat-cell *matCellDef="let element"> {{element?.provider}} </td>
-    </ng-container>
-    
-    <ng-container matColumnDef="cdProductSold">
-      <th mat-header-cell *matHeaderCellDef> Código </th>
-      <td mat-cell *matCellDef="let element"> {{element?.cdProductSold}} </td>
-    </ng-container>
-   
-    <ng-container matColumnDef="vlInput">
-      <th mat-header-cell *matHeaderCellDef> Valor Entrada</th>
-      <td mat-cell *matCellDef="let element"> {{element?.vlInput}} </td>
-    </ng-container>
-   
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let sale of sales | search : args">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{sale.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{(sale?.vlOutput-sale?.vlInput)*sale?.amount | currency: 'BRL'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-    <ng-container matColumnDef="vlOutput">
-      <th mat-header-cell *matHeaderCellDef> Valor Saída</th>
-      <td mat-cell *matCellDef="let element"> {{element?.vlOutput}} </td>
-    </ng-container>
-    
-    <ng-container matColumnDef="amount">
-      <th mat-header-cell *matHeaderCellDef> Quantidade </th>
-      <td mat-cell *matCellDef="let element"> {{element?.amount}}</td>
-    </ng-container>
+        <p> Fabricante: {{sale.manufacturer}} </p>
+        <p> Fornecedor: {{sale.provider}} </p>
+        <p> Código: {{sale.cdProductSold}} </p>
+        <p> Preço entrada: {{sale.vlInput}} </p>
+        <p> Preço saida: {{sale.vlOutput}} </p>
+        <p> Quantidade: {{sale.amount}} </p>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-    <ng-container matColumnDef="lucro">
-      <th mat-header-cell *matHeaderCellDef> Lucro </th>
-      <td mat-cell *matCellDef="let element"> {{(element?.vlOutput-element?.vlInput)*element?.amount}}</td>
-    </ng-container>
+  </div>
 
-    <ng-container matColumnDef="dtSale">
-      <th mat-header-cell *matHeaderCellDef> Data </th>
-      <td mat-cell *matCellDef="let element"> {{element?.dtSale}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef> 
-    </th>
-      <td mat-cell *matCellDef="let element" >
-           <ion-icon id="delete" (click)="cancelSale(element)" name="trash-bin-outline"></ion-icon>      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-
-</div>
-</div>
-
-<div *ngIf="isDevice">
-
-<mat-form-field id="filter">
-  <mat-label>Procurar</mat-label>
-  <input matInput [(ngModel)]="args">
-</mat-form-field>
-
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let sale of sales | search : args">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-       {{sale.name}}
-      </mat-panel-title>
-      <mat-panel-description>
-        R$ {{(sale?.vlOutput-sale?.vlInput)*sale?.amount}}, 00
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-      <p> Fabricante: {{sale.manufacturer}} </p>
-      <p> Fornecedor: {{sale.provider}} </p>
-      <p> Código: {{sale.cdProductSold}} </p>
-      <p> Preço entrada: {{sale.vlInput}} </p>
-      <p> Preço saida: {{sale.vlOutput}} </p>
-      <p> Quantidade: {{sale.amount}} </p>
-  </mat-expansion-panel>
-</mat-accordion>
-
-</div>
-
-<ion-card>
-  <ion-card-header>
+  <ion-card>
+    <ion-card-header>
       <h2>Total</h2>
-  </ion-card-header>
-  <ion-card-content style="text-align: center;">
-      <h1 [ngClass]="total > 0 ? 'positivo' : 'negativo' ">R$ {{total}},00</h1>
-  </ion-card-content>
-</ion-card>
+    </ion-card-header>
+    <ion-card-content style="text-align: center;">
+      <h1 [ngClass]="total > 0 ? 'positivo' : 'negativo' ">{{total | currency: 'BRL'}}</h1>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

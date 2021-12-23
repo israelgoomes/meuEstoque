@@ -42,3 +42,16 @@ ion-card-header{
   text-align: center;
   width: 250px;
 }
+
+.list{
+padding: 10px;
+float: right;
+}
+
+.list__item{
+  float: right;
+}
+
+.list__item--active .list__item{
+color: green;
+}

@@ -1,0 +1,144 @@
+p#number{
+  font-size: 100px;
+  color: white;
+  text-align: center;
+}
+
+p#white {
+  font-size: 100px;
+  color: #62462B;
+  text-align: center;
+}
+
+span#mesAno{
+  font-size: 30px;
+  text-align: left;
+}
+
+p {
+text-align: center;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+mat-card-title{
+  text-align: center;
+}
+
+ion-header{
+  --ion-background-color: #62462B;
+}
+
+ion-title{
+  color: white;
+}
+
+mat-card#vendasAno{
+  margin-top: 30px;
+  display: block;
+  height: 91%;
+}
+
+canvas{
+  --width: ;
+}
+
+.color-card{
+  background-color: #62462B;
+  color: white;
+}
+.not-color{
+  border: 3px solid #62462B;
+}
+
+
+@media only screen and (max-width: 600px) {
+  p#number{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+
+  }
+  
+  p#white {
+    font-size: 50px;
+    color: #62462B;
+    text-align: center;
+  }
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    height: 100%;
+    width: 100%;
+  }  
+
+  canvas{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 2200px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 89%;
+  }
+}
+
+@media only screen and (max-width: 2000px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 88%;
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 84%;
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 78%;
+  }
+}
+
+@media only screen and (max-width: 1750px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 78%;
+  }
+}
+
+@media only screen and (max-width: 1900px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 86%;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+
+  mat-card#vendasAno{
+    margin-top: 30px;
+    display: block;
+    height: 88%;
+  }
+}

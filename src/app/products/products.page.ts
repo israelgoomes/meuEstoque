@@ -13,6 +13,8 @@ import { FindByQrCodePage } from '../find-by-qr-code/find-by-qr-code.page';
 import { AlertService } from '../services/alert-service/alert-service.service';
 import { Router } from '@angular/router';
 import { SpinnerService } from '../services/spinner-service/spinner.service';
+import { WebIntent } from '@ionic-native/web-intent/ngx';
+
 
 @Component({
   selector: 'app-products',
@@ -41,7 +43,9 @@ export class ProductsPage implements OnInit {
     private modalCtrl: ModalController,
     private alertSrvc: AlertService,
     private router: Router,
-    private spinnerSrvc: SpinnerService
+    private spinnerSrvc: SpinnerService,
+    private webIntent: WebIntent
+
   ) {
     this.platform.backButton.subscribeWithPriority(0, () => {
       if (this.routerOutlet && this.routerOutlet.canGoBack()) {
@@ -62,6 +66,9 @@ export class ProductsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.webIntent.getIntent().then(data => {
+      console.log(data)
+    })
     this.spinnerSrvc.hide();
     console.log('Compania', this.onCOmpany[0].idCompany);
   }

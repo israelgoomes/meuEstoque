@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,7 +18,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { ProductsPage } from './products.page';
 import { ModalEditProductPage } from '../modal-edit-product/modal-edit-product.page';
-import { ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ModalSalePage } from '../modal-sale/modal-sale.page';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
@@ -62,4 +62,4 @@ import { FindByQrCodePage } from '../find-by-qr-code/find-by-qr-code.page';
     ProductDeviceComponent,
   ],
 })
-export class ProductsPageModule {}
+export class ProductsPageModule { }

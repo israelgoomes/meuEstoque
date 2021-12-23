@@ -1,0 +1,69 @@
+<mat-form-field id="filter">
+  <mat-label>Procurar</mat-label>
+  <input matInput (keyup)="applyFilter($event)">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element?.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="manufacturer">
+      <th mat-header-cell *matHeaderCellDef> Fabricante </th>
+      <td mat-cell *matCellDef="let element"> {{element?.manufacturer}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="provider">
+      <th mat-header-cell *matHeaderCellDef> Fornecedor </th>
+      <td mat-cell *matCellDef="let element"> {{element?.provider}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cdProductSold">
+      <th mat-header-cell *matHeaderCellDef> Código </th>
+      <td mat-cell *matCellDef="let element"> {{element?.cdProductSold}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vlInput">
+      <th mat-header-cell *matHeaderCellDef> Valor Entrada</th>
+      <td mat-cell *matCellDef="let element"> {{element?.vlInput}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="vlOutput">
+      <th mat-header-cell *matHeaderCellDef> Valor Saída</th>
+      <td mat-cell *matCellDef="let element"> {{element?.vlOutput}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+      <td mat-cell *matCellDef="let element"> {{element?.amount}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lucro">
+      <th mat-header-cell *matHeaderCellDef> Lucro </th>
+      <td mat-cell *matCellDef="let element"> {{(element?.vlOutput-element?.vlInput)*element?.amount}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dtSale">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{element?.dtSale}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <ion-icon id="delete" (click)="cancelSale(element)" name="trash-bin-outline"></ion-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" showFirstLastButtons>
+  </mat-paginator>
+
+</div>

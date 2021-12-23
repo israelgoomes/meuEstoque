@@ -1,3 +1,4 @@
+import { ProductModel } from './../../models/tbProductModel';
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,7 +13,6 @@ import { configHelper } from '../../configurations/configHelper';
 import * as moment from 'moment';
 import { ModalSalePage } from '../../modal-sale/modal-sale.page';
 import { ModalEditProductPage } from '../../modal-edit-product/modal-edit-product.page';
-import { ProductModel } from '../../models/tbProductModel';
 import { PeriodicElement } from '../../models/periodicElementModel';
 
 @Component({
@@ -39,9 +39,9 @@ export class ProductTableComponent implements OnInit {
     private alertSrvc: AlertService,
     private spinnerSrvc: SpinnerService,
     private platform: Platform
-  ) { 
-    this.productSrvc.updtaeProductData.subscribe( () =>{  
-        this.ngOnInit();
+  ) {
+    this.productSrvc.updtaeProductData.subscribe(() => {
+      this.ngOnInit();
     })
   }
   displayedColumns: string[] = [
@@ -56,23 +56,21 @@ export class ProductTableComponent implements OnInit {
     'qrCode',
     'delete',
   ];
-  dataSource = new MatTableDataSource<PeriodicElement>();
-
+  dataSource = new MatTableDataSource<any>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngOnInit() {
     this.spinnerSrvc.hide();
-    console.log('Compania', this.onCOmpany[0].idCompany)
     // usando forkjoin para requisição dupla.
     this.productSrvc.getProducts(this.onCOmpany[0].idCompany).subscribe(res => {
       this.dataSource.data = res[0];
-     // this.providers = res[1];
+      // this.providers = res[1];
       this.spinnerSrvc.hide();
       this.spinnerSrvc.hide();
     }, (error) => {
-           this.spinnerSrvc.hide();
-           this.spinnerSrvc.hide();
-         }
+      this.spinnerSrvc.hide();
+      this.spinnerSrvc.hide();
+    }
     );
     this.dataSource.paginator = this.paginator;
 
@@ -86,7 +84,6 @@ export class ProductTableComponent implements OnInit {
   }
 
   async editProduct(param) {
-    console.log('TEDSTE')
     const modal = await this.modalCtrl.create({
       component: ModalEditProductPage,
       componentProps: {
@@ -100,7 +97,7 @@ export class ProductTableComponent implements OnInit {
     return await modal.present();
   }
 
-  qrCodeGenerator(param: ProductModel){
+  qrCodeGenerator(param: ProductModel) {
     this.showQrCode.emit(param);
     // this.qrData = param.cdProduct;
     // this.showQrCode = true;
@@ -125,11 +122,11 @@ export class ProductTableComponent implements OnInit {
   }
 
   async deleteProduct(param) {
-    this.alertSrvc.confirm(`Deseja excluir o cliente  ?`, () => {
+    this.alertSrvc.confirm(`Deseja excluir o produto  ?`, () => {
       this.productSrvc.deleteProduct(param).subscribe(
         () => {
           this.alertSrvc.toast(
-            `O cliente  foi excluido com sucesso. `,
+            `O produto  foi excluido com sucesso. `,
             2000,
             'top'
           );
@@ -146,7 +143,7 @@ export class ProductTableComponent implements OnInit {
     });
   }
 
-  
+
 
 
 }

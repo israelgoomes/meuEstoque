@@ -1,36 +1,39 @@
-
-
 <ion-content>
 
 
-  <ion-card>
+  <ion-card *ngIf="!isCadastro">
     <ion-card-header>
-     <h2>Login</h2> 
-     <mat-divider></mat-divider>
+      <h2>Login</h2>
+      <mat-divider></mat-divider>
 
     </ion-card-header>
 
     <ion-card-content>
+
       <form #f="ngForm" (ngSubmit)="login(f)" novalidate>
-      <mat-form-field appearance="outline">
-        <mat-label>CNPJ/CPF</mat-label>
-        <input type="number" name="cnpjCpf" ngModel matInput placeholder="Placeholder">
-        <mat-icon matSuffix>assignment_ind</mat-icon>
-        <mat-hint></mat-hint>
-      </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>CNPJ/CPF</mat-label>
+          <input type="number" name="cnpjCpf" ngModel matInput placeholder="Placeholder">
+          <mat-icon matSuffix>assignment_ind</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input name="password" ngModel type="password" matInput placeholder="Placeholder">
-        <mat-icon matSuffix>vpn_key</mat-icon>
-        <mat-hint></mat-hint>
-      </mat-form-field>
-      <mat-checkbox style="float: left;">Manter-me conectado.</mat-checkbox>
-      <br>
-      <button mat-raised-button type="submit" style="border: 1px solid #62462B; width: 100%;">Logar</button>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input name="password" ngModel type="password" matInput placeholder="Placeholder">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+        <mat-checkbox style="float: left;">Manter-me conectado.</mat-checkbox>
+        <br>
+        <button class="button" mat-raised-button type="submit">Logar</button>
 
-    </form>
+      </form>
+
+      <button class="button" mat-raised-button (click)="cadastrar()">Cadastro</button>
     </ion-card-content>
   </ion-card>
+
+  <app-cadastro *ngIf="isCadastro" (result)="teste($event)"></app-cadastro>
 
 </ion-content>

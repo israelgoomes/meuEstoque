@@ -1,0 +1,56 @@
+<ion-card>
+  <ion-card-header>
+    <h2>Cadastro</h2>
+    <mat-divider></mat-divider>
+
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()" novalidate>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nome Empresa</mat-label>
+        <input type="text" name="cnpjCpf" formControlName="nmEmpresa" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="text" name="cnpjCpf" formControlName="email" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>CNPJ/CPF</mat-label>
+        <input type="text" name="cnpjCpf" formControlName="cnpjCpf" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input type="password" name="cnpjCpf" formControlName="password" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirme a senha</mat-label>
+        <input type="password" name="cnpjCpf" formControlName="senhaConfirmacao" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+      <span class="help-block pull-right has-error-block" *ngIf="cadastroForm.hasError('passwordsNotMatch')"><i
+          class="fa fa-remove"></i> As senhas não conferem</span>
+      <br>
+
+      <button [disabled]="!cadastroForm.valid" class=" button" mat-raised-button type="submit">Cadastrar</button>
+      <button (click)="cancelar()" class=" button" mat-raised-button type="submit">Cancelar</button>
+
+
+    </form>
+  </ion-card-content>
+</ion-card>
